@@ -45,6 +45,7 @@ func (m *Map) Add(keys ...string) {
 			m.hashMap[hash] = key
 		}
 	}
+	sort.Ints(m.keys)
 }
 
 // Get gets the closest item in the hash to the provided key 在哈希环提供的key中查找最近的节点
