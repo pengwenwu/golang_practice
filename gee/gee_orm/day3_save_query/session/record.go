@@ -30,7 +30,7 @@ func (s *Session) Insert(values ...interface{}) (int64, error) {
 // 遍历每一行记录，利用反射创建destType的实例dest，将dest的所有字段平铺开，构造切片values
 // 调用rows.Scan()将该行记录每一列的值依次赋值给values中的每一个字段
 // 将dest添加到切片destSlice中。循环直到所有的记录都添加到切片destSlice中
-func (s Session) Find(values interface{}) error {
+func (s *Session) Find(values interface{}) error {
 	destSlice := reflect.Indirect(reflect.ValueOf(values))
 	destType := destSlice.Type().Elem()
 	table := s.Model(reflect.New(destType).Elem().Interface()).RefTable()
