@@ -146,8 +146,6 @@ func (s *Server) readRequest(cc codec.Codec) (*request, error) {
 		return req, err
 	}
 	return req, nil
-
-	return req, nil
 }
 
 func (s *Server) sendResponse(cc codec.Codec, h *codec.Header, body interface{}, sending *sync.Mutex) {
