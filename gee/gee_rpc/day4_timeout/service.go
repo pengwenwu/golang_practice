@@ -14,7 +14,7 @@ type methodType struct {
 	numCalls  uint64
 }
 
-func (t *methodType) NumberCalls() uint64 {
+func (t *methodType) NumCalls() uint64 {
 	return atomic.LoadUint64(&t.numCalls)
 }
 
